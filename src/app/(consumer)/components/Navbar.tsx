@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import { Button } from "@/components/ui/Button";
+import AdminLink from "@/app/(consumer)/components/AdminLink";
 
 const Navbar = () => {
   return (
@@ -15,12 +16,7 @@ const Navbar = () => {
         </Link>
         <Suspense>
           <SignedIn>
-            <Link
-              href="/admin"
-              className="hover:bg-accent/10 flex items-center px-2"
-            >
-              Admin
-            </Link>
+            <AdminLink />
             <Link
               href="/courses"
               className="hover:bg-accent/10 flex items-center px-2"
